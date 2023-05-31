@@ -2,8 +2,8 @@
 
 Object ID
 
- https://app.hubspot.com/contacts/39875114/objects/2-15384728/views/all/list
 
+https://app.hubspot.com/contacts/39875114/objects/2-15384728/views/all/list?redirectFrom=crm-records-ui
 
 
 This repository is for the Integrating With HubSpot I: Foundations course. This practicum is one of two requirements for receiving your Integrating With HubSpot I: Foundations certification. You must also take the exam and receive a passing grade (at least 75%).
