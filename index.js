@@ -14,6 +14,9 @@ const PRIVATE_APP_ACCESS = "pat-na1-4f773731-c4ab-48c6-99f3-311ec4aec9c5";
 app.get('/', async (req, res) => {
 
     const contacts = 'https://api.hubspot.com/crm/v3/objects/contacts';
+   // const contacts = 'https://api.hubspot.com/crm/v3/objects/contacts';
+
+
     const headers = {
         Authorization: `Bearer ${PRIVATE_APP_ACCESS}`,
         'Content-Type': 'application/json'
@@ -23,7 +26,7 @@ app.get('/', async (req, res) => {
         const resp = await axios.get(contacts, { headers });
         const data = resp.data.results;
         console.log(data);
-        res.render('contacts', { title: 'Contacts | HubSpot APIs', data });      
+        res.json(data);       
     } catch (error) {
         console.error(error);
     }
