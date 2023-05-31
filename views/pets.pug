@@ -8,6 +8,5 @@ html
         .cards 
             each contact in data
                 .card 
-                    h2.card__name #{contact.properties.name}
+                    h2.card__name #{contact.properties.name} #{contact.properties.Type}
                     p.card__email #{contact.properties.favoritetoy}
-                    p.card__email #{contact.properties.Type}
