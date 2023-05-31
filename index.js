@@ -14,7 +14,7 @@ const PRIVATE_APP_ACCESS = "pat-na1-4f773731-c4ab-48c6-99f3-311ec4aec9c5";
 // * Code for Route 1 goes here
 app.get('/', async (req, res) => {
 
-    const contacts = 'https://api.hubspot.com/crm/v3/objects/p39875114_pets?properties=name';
+    const contacts = 'https://api.hubspot.com/crm/v3/objects/p39875114_pets?properties=name&properties=favoritetoy&properties=type';
    // const contacts = 'https://api.hubspot.com/crm/v3/objects/contacts';
 
 
