@@ -1,3 +1,3 @@
 git add .
-git commit -a -m 'Integrating With HubSpot I: Foundations Practicum Instructions progress...'
-git push origin main
+git commit -a -m 'improvement commit to my Integrating With HubSpot I: Foundations practicum repository.'
+git push origin working-branch
