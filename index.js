@@ -61,6 +61,35 @@ app.get('/update', async (req, res) => {
 
 // * Code for Route 3 goes here
 
+app.post('/update', async (req, res) => {
+    const update = {
+        properties: {
+            "name": req.body.name,
+            "favoritetoy": req.body.favoritetoy,
+            "type": req.body.type
+        }
+    }
+
+
+    const updateContact = `https://api.hubspot.com/crm/v3/objects/p39875114_pets`;
+    const headers = {
+        Authorization: `Bearer ${PRIVATE_APP_ACCESS}`,
+        'Content-Type': 'application/json'
+    };
+
+    console.log(update);
+
+    try { 
+        await axios.post(updateContact, update, { headers } );
+        res.redirect('back');
+    } catch(err) {
+        console.error(err);
+    }
+
+});
+
+
+
 /** 
 * * This is sample code to give you a reference for how you should structure your calls. 
 

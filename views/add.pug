@@ -8,6 +8,10 @@ html(lang="en")
             p User: #{userEmail}
             p Favorite Book: #{favoriteBook}
             form(method="POST")
-                label(for="newVal") New favorite book
-                input(type="text" name="newVal" required)
+                label(for="name") Name
+                label(for="favoritetoy") Favorite Toy
+                label(for="type") Type
+                input(type="text" name="name" required)
+                input(type="text" name="favoritetoy" required)
+                input(type="text" name="type" required)
                 input(type="submit" value="Submit")
