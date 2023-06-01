@@ -9,7 +9,7 @@ app.use(express.json());
 
 // * Please include the private app access token in your repo BUT only an access token built in a TEST ACCOUNT. Don't do this practicum in your normal account.
 const PRIVATE_APP_ACCESS = "pat-na1-4f773731-c4ab-48c6-99f3-311ec4aec9c5";
-const authUrl = `/`;
+const authUrl = `/update`;
 
 
 // TODO: ROUTE 1 - Create a new app.get route for the homepage to call your custom object data. Pass this data along to the front-end and create a new pug template in the views folder.
@@ -40,27 +40,20 @@ app.get('/', async (req, res) => {
 // TODO: ROUTE 2 - Create a new app.get route for the form to create or update new custom object data. Send this data along in the next route.
 
 // * Code for Route 2 goes here
-app.post('//update-cobj', async (req, res) => {
-    const update = {
-        properties: {
-            "favorite_book": req.body.newVal
-        }
-    }
+app.get('/update', async (req, res) => {
+    // http://localhost:3000/update?email=rick@crowbars.net
 
-    const email = req.query.email;
-    const updateContact = `https://api.hubapi.com/crm/v3/objects/contacts/${email}?idProperty=email`;
-    const headers = {
-        Authorization: `Bearer ${PRIVATE_APP_ACCESS}`,
-        'Content-Type': 'application/json'
-    };
 
-    try { 
-        await axios.patch(updateContact, update, { headers } );
-        res.redirect('back');
+    try {
+     //   const response = await axios.get(getContact, { headers });
+       // const data = response.data;
+
+        // res.json(data);
+        res.render('add', {userEmail: "data.properties.email", favoriteBook: "data.properties.favorite_book"});
+        
     } catch(err) {
         console.error(err);
     }
-
 });
 
 
