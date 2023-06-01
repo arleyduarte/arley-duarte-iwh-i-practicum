@@ -27,7 +27,7 @@ app.get('/', async (req, res) => {
         const resp = await axios.get(pets, { headers });
         const data = resp.data.results;
         console.log(data);
-        res.render('pets', { title: 'Pets | HubSpot APIs', data });       
+        res.render('pets', { title: 'Pets | HubSpot APIs', addUrl: addUrl, data });       
     } catch (error) {
         console.error(error);
     }
