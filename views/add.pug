@@ -9,9 +9,9 @@ html(lang="en")
             p Favorite Book: #{favoriteBook}
             form(method="POST")
                 label(for="name") Name
-                label(for="favoritetoy") Favorite Toy
-                label(for="type") Type
                 input(type="text" name="name" required)
+                label(for="favoritetoy") Favorite Toy
                 input(type="text" name="favoritetoy" required)
+                label(for="type") Type
                 input(type="text" name="type" required)
                 input(type="submit" value="Submit")
