@@ -9,7 +9,7 @@ app.use(express.json());
 
 // * Please include the private app access token in your repo BUT only an access token built in a TEST ACCOUNT. Don't do this practicum in your normal account.
 const PRIVATE_APP_ACCESS = "pat-na1-4f773731-c4ab-48c6-99f3-311ec4aec9c5";
-const addUrl = `/update`;
+const addUrl = `/update-cobj`;
 
 
 // TODO: ROUTE 1 - Create a new app.get route for the homepage to call your custom object data. Pass this data along to the front-end and create a new pug template in the views folder.
@@ -40,7 +40,7 @@ app.get('/', async (req, res) => {
 // TODO: ROUTE 2 - Create a new app.get route for the form to create or update new custom object data. Send this data along in the next route.
 
 // * Code for Route 2 goes here
-app.get('/update', async (req, res) => {
+app.get('/update-cobj', async (req, res) => {
     // http://localhost:3000/update?email=rick@crowbars.net
 
 
@@ -49,7 +49,7 @@ app.get('/update', async (req, res) => {
        // const data = response.data;
 
         // res.json(data);
-        res.render('add', {userEmail: "data.properties.email", favoriteBook: "data.properties.favorite_book"});
+        res.render('updates', {userEmail: "data.properties.email", favoriteBook: "data.properties.favorite_book"});
         
     } catch(err) {
         console.error(err);
@@ -61,7 +61,7 @@ app.get('/update', async (req, res) => {
 
 // * Code for Route 3 goes here
 
-app.post('/update', async (req, res) => {
+app.post('/update-cobj', async (req, res) => {
     const update = {
         properties: {
             "name": req.body.name,
